@@ -1,6 +1,6 @@
 # 📌 Anotações e Comentários
 
-    Ao final do uso da ferramenta, pedi para a IA ressaltar minhas perguntas como títulos e as respostas dela como o conteúdo abaixo. Achei interessante as informações passadas por ela e eu também pude localizar tópicos mencionados até agora na **Formação Dart**, bem como inicialização de variáveis, alguns métodos e também explicações sobre **final** e **const**. Algo que achei interessante também foi poder ter um vislumbre de programação orientada à objetos através de alguns dos exemplos gerados pela IA
+Ao final do uso da ferramenta, pedi para a IA ressaltar minhas perguntas como títulos e as respostas dela como o conteúdo abaixo. Achei interessante as informações passadas por ela e eu também pude localizar tópicos mencionados até agora na **Formação Dart**, bem como inicialização de variáveis, alguns métodos e também explicações sobre **final** e **const**. Algo que achei interessante também foi poder ter um vislumbre de programação orientada à objetos através de alguns dos exemplos gerados pela IA
 
 ---
 
