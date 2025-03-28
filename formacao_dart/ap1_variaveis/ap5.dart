@@ -16,12 +16,13 @@ void main() {
   } else {
     ativoStatus = "Inativo";
   }
-
+  /* Essa parte está comentada porque um "erro" era que a condição sempre seria falsa, pra não ficar laranja no VS Code eu comentei essa parte de código
   if (pessoa.nacionalidade == null) {
     nacionalidadeStatus = "Não informado";
   } else {
     nacionalidadeStatus = pessoa.nacionalidade;
   }
+  */
 
   //Printando saídas
   print("Nome completo: ${pessoa.nome.toString()} ${pessoa.sobrenome.toString()}");
