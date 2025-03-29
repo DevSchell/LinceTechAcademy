@@ -15,14 +15,19 @@ void main() {
     lista2.add(Random().nextInt(100));
   }
 
-  //Requisito 1 -> Função que recebe 1 lista como parâmentro e printa ela
+  //Função que recebe 1 lista como parâmentro e printa ela
   void imprimirLista(List lista) {
+    if (lista.length == 0) {
+      print("Lista vazia"); //Validação da lista vazia
+    } else{
     print("Lista: $lista");
+    }
   }
 
+  //Função pra somar 2 listas
   List? somarListas(List lista1, List lista2) {
-    if (lista1.length != lista2.length) {
-      print("Listas com número de posições diferente!");
+    if (lista1.length != lista2.length) { //Lógica que compara se as 2 listas são de mesmo número de posições(tamanho)
+      print("Listas com número de posições diferentes!");
     } else {
       for (var i = 0; i < lista1.length; i++) {
         resultadoLista.add(lista1[i] + lista2[i]);
@@ -35,6 +40,6 @@ void main() {
   imprimirLista(lista1);
   imprimirLista(lista2);
   somarListas(lista1, lista2);
-  print(acoesRealizadas);
+  imprimirLista(acoesRealizadas);
   imprimirLista(resultadoLista);
 }
