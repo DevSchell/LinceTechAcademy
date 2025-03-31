@@ -43,7 +43,7 @@ O operador ternário é uma ferramenta poderosa, porém é necessário saber QUA
 * **Teste Cuidadosamente:** Teste o código com diferentes valores de entrada para garantir que ele se comporte conforme o esperado em todas as situações. Preste atenção especial aos casos extremos e aos valores nulos.
 * **Documente o Código:** Adicione comentários para explicar a lógica da expressão ternária, especialmente se ela for complexa. A documentação ajuda a tornar o código mais fácil de entender e manter.
 
-## Anotações sobre nossa Interação
+## Anotações sobre interação com IA
 
 * Exploramos os operadores de atribuição compostos em Dart.
 * Discutimos as diferenças entre `if-else` e expressões condicionais (operador ternário) em Dart.
