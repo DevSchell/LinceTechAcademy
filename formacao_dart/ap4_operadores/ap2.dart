@@ -15,7 +15,6 @@ void main() {
 }
 
 List<int> converterLista(List<String> lista) {
-  //Tirar o ? depois...
   List<int> listaConvertida = [];
   for (var element in lista) {
     listaConvertida.add(int.tryParse(element) ?? 0);
