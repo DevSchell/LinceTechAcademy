@@ -24,11 +24,12 @@ void main() {
   }
 }
 
+//Função requisitada
 int contarNome(List<String> lista, String nome) {
   int numRepeticoes = 0;
 
   for (var element in lista) {
-    if (element == nome) {
+    if (element == nome) { //Se nome é igual ao parâmetro, incrementa o contador
       numRepeticoes++;
     }
   }
