@@ -3,7 +3,7 @@
 ## Principais conceitos de Orientação a Objetos
 * POO é uma forma de organizar o código pensando em objetos do mundo real. E temos vários conceitos importantes como...
   
-* | Conceito        | Explicação                                         | Exemplo em Dart                                             |
+  | Conceito        | Explicação                                         | Exemplo em Dart                                             |
   |-----------------|----------------------------------------------------|-------------------------------------------------------------|
   | Classe          | Molde para criar objetos                           | ``class Pessoa {}``                                         |
   | Objeto          | Instância da classe                                | ``var p = Pessoa();``                                       |
