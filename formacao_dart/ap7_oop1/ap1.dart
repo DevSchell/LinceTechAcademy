@@ -1,5 +1,5 @@
 void main() {
- ContaBancaria conta = new ContaBancaria("Thiago", 100);
+ ContaBancaria conta = new ContaBancaria("", 100);
 
  conta.sacar(200);
 
@@ -10,9 +10,16 @@ class ContaBancaria {
   late double _saldo;
 
   ContaBancaria(String titular, double saldo) { // Construtor da classe
+    try {
+      if( titular == ""){
+        throw Exception("Os valores de titular e saldo inicial devem ser preenchidos");
+      }
     this._titular = titular;
     this._saldo = saldo;
     print("Seja bem--vindo(a) $_titular"); //Só pra usar o _titular
+    } catch (e){
+      throw Exception("Os valores de titular e saldo inicial devem ser preenchidos");
+    }
   }
 
   void sacar(double valor) { //Method "sacar"
