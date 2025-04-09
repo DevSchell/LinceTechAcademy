@@ -2,15 +2,15 @@
 
 ## Principais conceitos de Orientação a Objetos
 * POO é uma forma de organizar o código pensando em objetos do mundo real. E temos vários conceitos importantes como...
-  | Conceito        | Explicação                                         | Exemplo em Dart |
-  |-----------------|----------------------------------------------------|-----------------|
-  | Classe          | Molde para criar objetos                           | ``class Pessoa {}``   |
-  | Objeto          | Instância da classe                                | ``var p = Pessoa();``|
-  | Atributo        | Característica do objeto                           | ``String nome; int idade;`` |      |
-  | Método          |  Ação que o objeto pode fazer                      | ``void falar() { print("oi");}`` |
-  | Encapsulamento  | Esconder detalhes internos do objeto               | Usar ``private`` e getters/setters |
-  | Herança         | Uma classe pode herdar de outra                    | ``class Aluno extends Pessoa {}`` |
-  | Polimorfismo    | Um mesmo método pode ter comportamentos diferentes | ``falar()`` pode ser diferente em ``Pessoa`` e ``Cachorro`` |
+| Conceito        | Explicação                                         | Exemplo em Dart |
+|-----------------|----------------------------------------------------|-----------------|
+| Classe          | Molde para criar objetos                           | ``class Pessoa {}``   |
+| Objeto          | Instância da classe                                | ``var p = Pessoa();``|
+| Atributo        | Característica do objeto                           | ``String nome; int idade;`` |      |
+| Método          |  Ação que o objeto pode fazer                      | ``void falar() { print("oi");}`` |
+| Encapsulamento  | Esconder detalhes internos do objeto               | Usar ``private`` e getters/setters |
+| Herança         | Uma classe pode herdar de outra                    | ``class Aluno extends Pessoa {}`` |
+| Polimorfismo    | Um mesmo método pode ter comportamentos diferentes | ``falar()`` pode ser diferente em ``Pessoa`` e ``Cachorro`` |
 
 ## Vantagens de usar Orientação a Objetos
  | Vantagem     | Explicação                                                 |
