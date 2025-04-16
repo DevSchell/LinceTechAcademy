@@ -18,7 +18,7 @@ void main() async{
           break;
 
         case "2":
-          final listaDeObj = gerarListaObj("SC");
+          final listaDeObj = gerarListaObj("SC", "1");
           var tempMaxima = await getTempMaxEstadoMes(await listaDeObj);
           print("Temperatura máxima: $tempMaximaº celsius");
 
@@ -30,6 +30,15 @@ void main() async{
           break;
 
         case "3":
+          List<List<DataLine>> listaDeMeses = await getMeses("SC");
+          double mediaAno = await getTempMedEstadoAno(await listaDeMeses);
+          print("Temperatura média do ano: ${mediaAno.toStringAsFixed(2)}");
+
+          double maxAno = await getTempMaxEstadoAno(await listaDeMeses);
+          print("Temperatura máxima do ano: $maxAno");
+
+          double minAno = await getTempMinEstadoAno(await listaDeMeses);
+          print("Temperatura mínima do ano: $minAno");
           break;
 
         case "4":
@@ -44,8 +53,55 @@ void main() async{
     }
 }
 
-Future<double> getTempMedEstadoAno() {
-  //TODO continuar método
+//Função pra conseguir temperatura mínima do ano do estado
+Future<double> getTempMinEstadoAno(List<List<DataLine>> listaMeses) async {
+  double min = await getTempMaxEstadoAno(await listaMeses);
+
+  for (int i = 0; i < listaMeses.length; i++) {
+    for(int j = 0; j < listaMeses[i].length; j++) {
+      if (min > listaMeses[i][j].temperatura) {
+        min = listaMeses[i][j].temperatura;
+      }
+    }
+  }
+  return min;
+}
+
+//Função pra conseguir temperatura máxima do ano do estado
+Future<double> getTempMaxEstadoAno(List<List<DataLine>> listaMeses) async {
+double max = 0;
+  for (int i = 0; i < listaMeses.length; i++) {
+    for(int j = 0; j < listaMeses[i].length; j++) {
+    if (max < listaMeses[i][j].temperatura) {
+      max = listaMeses[i][j].temperatura;
+      }
+    }
+  }
+  return max;
+}
+
+//Função pra conseguir a média de temperatura do ano um estado
+Future<double> getTempMedEstadoAno(List<List<DataLine>> listaMeses) async {
+  double mediaAno = 0;
+  int totalAdicoes = 0;
+  for (int i = 0; i < listaMeses.length; i++) {
+    for(int j = 0; j < listaMeses[i].length; j++) {
+      mediaAno += listaMeses[i][j].temperatura;
+      totalAdicoes++;
+    }
+  }
+  mediaAno = mediaAno / totalAdicoes;
+  return mediaAno;
+}
+
+//Função pra conseguir todos os meses de um estado
+Future<List<List<DataLine>>> getMeses(String userPath) async {
+  List<List<DataLine>> listaMeses = []; //Acho que esse é o caminho...
+  for (int i = 1; i < 12; i++) {
+    final listaDeObj = gerarListaObj(userPath, "${i}");
+    listaMeses.add(await listaDeObj);
+  }
+  return listaMeses;
 }
 
 //Função pra conseguir a temperatura média de cada estado por hora
@@ -96,8 +152,8 @@ Future<double> getTempMedEstadoMes(List<DataLine> listaDeObj) async {
   return media;
 }
 
-Future<List<DataLine>> gerarListaObj(String userPath) async {
-  List<String> lista = await lerArquivoCSV(userPath);
+Future<List<DataLine>> gerarListaObj(String userPath, String mes) async {
+  List<String> lista = await lerArquivoCSV(userPath, mes); //TODO: Atualizar parâmetro
   List<DataLine> listaObjetos = [];
   for (int i = 1; i < lista.length; i++) { //Index começa em 1, pra pular o header da tabela de dados
     var obj = gerarObj(userPath, i);
@@ -107,8 +163,8 @@ Future<List<DataLine>> gerarListaObj(String userPath) async {
 }
 
 //Retorna cada linha como uma string dentro de uma lista
-Future<List<String>> lerArquivoCSV(String userPath) async {
-  final arquivo = File("C:/clima/sensores/${userPath}_2024_1.csv");
+Future<List<String>> lerArquivoCSV(String userPath, String mes) async {
+  final arquivo = File("C:/clima/sensores/${userPath}_2024_$mes.csv");
   final linhas = await arquivo
       .openRead()
       .transform(latin1.decoder) // <- aqui o pulo do gato
@@ -127,7 +183,7 @@ List<String> tratarDados(String linha ) {
 
 //Method responsável por criar um objeto que representa a linha de dados do arquivo
 Future<DataLine> gerarObj(String userPath, int index) async {
-  final dados = await lerArquivoCSV(userPath);
+  final dados = await lerArquivoCSV(userPath, "1"); //TODO: atualizar parâmetro
   final linha = tratarDados(dados[index]);
 
   DataLine d = new DataLine();
