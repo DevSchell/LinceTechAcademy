@@ -14,24 +14,19 @@ void main() async{
 
       switch (opt){
         case "1":
+
           break;
 
         case "2":
-          late String userPath;
-          print("De qual estado você quer tirar o relatório?");
-          print("1 - São Paulo");
-          print("2 - Santa Catarina");
-          dynamic option = stdin.readLineSync();
-            if (option == "1") {
-              userPath = "SP";
-            } else if (option == "2") {
-              userPath = "SC";
-            } else {
-              print("Por favor insira uma opção válida. 1 ou 2");
-              return;
-            }
-            List<DataLine> lista = await gerarListaObj(userPath);
-             print(await getTempMedEstadoMes(lista));
+          final listaDeObj = gerarListaObj("SC");
+          var tempMaxima = await getTempMaxEstadoMes(await listaDeObj);
+          print("Temperatura máxima: $tempMaximaº celsius");
+
+          var tempMinima = await getTempMinEstadoMes(await listaDeObj);
+          print("Temperatura mínima: $tempMinimaº celsius");
+
+          var tempMediaHora = await getTempMedEstadoHora(await listaDeObj);
+          print("Temperatura média por hora do estado: ${tempMediaHora.toStringAsFixed(2)}º celsius");
           break;
 
         case "3":
@@ -49,6 +44,49 @@ void main() async{
     }
 }
 
+Future<double> getTempMedEstadoAno() {
+  //TODO continuar método
+}
+
+//Função pra conseguir a temperatura média de cada estado por hora
+Future<double> getTempMedEstadoHora(List<DataLine> listaDeObj) async {
+  List<double> valores = [];
+  double media = 0;
+  for (int i = 0; i < 25; i++){
+    valores.add(listaDeObj[i].temperatura);
+  }
+
+  for (int i = 0; i < valores.length; i++) {
+    media += valores[i];
+  }
+  media = media / valores.length;
+  return media;
+}
+
+
+//Função pra conseguir temperatura mínima de cada estado por mês
+Future<double> getTempMinEstadoMes(List<DataLine> listaDeObj) async{
+  double min = await getTempMaxEstadoMes(listaDeObj);
+  for (DataLine objeto in listaDeObj) {
+    if (min > objeto.temperatura) {
+      min = objeto.temperatura;
+    }
+  }
+  return min;
+}
+
+//Função pra conseguir temperatura máxima de cada estado por mês
+double getTempMaxEstadoMes(List<DataLine> listaDeObj)  {
+  double max = 0;
+  for (DataLine obj in listaDeObj) {
+    if(max < obj.temperatura) {
+      max = obj.temperatura;
+    }
+  }
+  return max;
+}
+
+//Função pra conseguir temperatura média de cada estado por mês
 Future<double> getTempMedEstadoMes(List<DataLine> listaDeObj) async {
   double media = 0;
   for (DataLine obj in listaDeObj) {
@@ -118,4 +156,21 @@ abstract class dadosOrganizados { //Classe que deixa os dados de forma mais aces
 class DataLine extends dadosOrganizados {
 
 }
+
+//TAVA NO CASE 2
+// late String userPath;
+// print("De qual estado você quer tirar o relatório?");
+// print("1 - São Paulo");
+// print("2 - Santa Catarina");
+// dynamic option = stdin.readLineSync();
+// if (option == "1") {
+// userPath = "SP";
+// } else if (option == "2") {
+// userPath = "SC";
+// } else {
+// print("Por favor insira uma opção válida. 1 ou 2");
+// return;
+// }
+// List<DataLine> lista = await gerarListaObj(userPath);
+// print(await getTempMedEstadoMes(lista));
 
