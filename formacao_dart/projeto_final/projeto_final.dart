@@ -75,6 +75,11 @@ void main() async {
         final listaDeObj = gerarListaObj("SC", "1");
         final direcaoFrequente = await getDirecaoVentoFrequenteMes(await listaDeObj);
         print("Direção mais frequente: $direcaoFrequente");
+
+        //Trabalhando com ano
+        final List<List<DataLine>> listaDeMeses = await getMeses("SC");
+        final int direcaoVentoFrequenteAno = await getDirecaoVentoFrequenteAno(listaDeMeses);
+        print("Direção do vento mais frequente no último ano: $direcaoVentoFrequenteAno");
         break;
 
       case "4":
@@ -90,6 +95,24 @@ void main() async {
         break;
     }
   }
+}
+
+//Função pra conseguir a direção do vento mais frequente do ano
+Future<int> getDirecaoVentoFrequenteAno(List<List<DataLine>> listaMeses) async{
+  Map<int, int> listaGraus = {};
+  List<int> valoresDeGrau = []; //Aqui vai ter as frequências mais altas de cada mês
+
+  for (var mes in listaMeses) {
+    valoresDeGrau.add(await getDirecaoVentoFrequenteMes(mes));
+  }
+
+  for(int i = 0; i < valoresDeGrau.length; i++){
+    listaGraus[valoresDeGrau[i]] = (listaGraus[valoresDeGrau[i]] ?? 0) + 1;
+  }
+
+  int grauMaisFrequente = listaGraus.entries.reduce((a, b) => a.value > b.value ? a : b).key;
+  return Future.value(grauMaisFrequente);
+
 }
 
 //Função pra conseguir a direção mais frequente do vento do mês
@@ -324,6 +347,42 @@ Future<DataLine> gerarObj(String userPath, int index) async {
 
   return d;
 }
+abstract class Relatorio {
+  //Requisitos de Temperatura - unidades -> C Celisus - F Fahrenheit - K Kelvin
+  late double tempMediaEstadoAnoC;
+    late double tempMediaEstadoAnoF;
+    late double tempMediaEstadoAnoK;
+  late double tempMaxEstadoAnoC;
+    late double tempMaxEstadoAnoF;
+    late double tempMaxEstadoAnoK;
+  late double tempMinEstadoAnoC;
+    late double tempMinEstadoAnoF;
+    late double tempMinEstadoAnoK;
+  late double tempMediaEstadoMesC;
+    late double tempMediaEstadoMesF;
+    late double tempMediaEstadoMesK;
+  late double tempMaxEstadoMesC;
+    late double tempMaxEstadoMesF;
+    late double tempMaxEstadoMesK;
+  late double tempMinEstadoMesC;
+    late double tempMinEstadoMesF;
+    late double tempMinEstadoMesK;
+  late double tempHoraEstadoC;
+    late double tempHoraEstadoF;
+    late double tempHoraEstadoK;
+
+  //Requisitos de Umidade do ar
+  late double umidadeMediaEstadoAno;
+  late double umidadeMinEstadoAno;
+  late double umidadeMaxEstadoAno;
+  late double umidadeMediaEstadoMes;
+  late double umidadeMaxEstadoMes;
+  late double umidadeMinEstadoMes;
+
+  //Requisitos Direção do vento - unidades -> graus radianos
+  late int direcaoMaiorFrequenciaEstado;
+  late int direcaoMaiorFrequenciaAno;
+}
 
 abstract class dadosOrganizados {
   //Classe que deixa os dados de forma mais acessível. Cada linha será um objeto
@@ -339,19 +398,4 @@ abstract class dadosOrganizados {
 
 class DataLine extends dadosOrganizados {}
 
-//TAVA NO CASE 2
-// late String userPath;
-// print("De qual estado você quer tirar o relatório?");
-// print("1 - São Paulo");
-// print("2 - Santa Catarina");
-// dynamic option = stdin.readLineSync();
-// if (option == "1") {
-// userPath = "SP";
-// } else if (option == "2") {
-// userPath = "SC";
-// } else {
-// print("Por favor insira uma opção válida. 1 ou 2");
-// return;
-// }
-// List<DataLine> lista = await gerarListaObj(userPath);
-// print(await getTempMedEstadoMes(lista));
+
