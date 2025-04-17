@@ -73,7 +73,7 @@ void main() async {
       case "3":
         //Trabalhando com mês
         final listaDeObj = gerarListaObj("SC", "1");
-        final direcaoFrequente = await getDirecaoDoVentoMes(await listaDeObj);
+        final direcaoFrequente = await getDirecaoVentoFrequenteMes(await listaDeObj);
         print("Direção mais frequente: $direcaoFrequente");
         break;
 
@@ -92,34 +92,18 @@ void main() async {
   }
 }
 
-//TODO: Refazer função
-Future<double> getDirecaoDoVentoMes(List<DataLine> listaDeObjetos) async {
-  Map<double, int> contagemDirecoes = {};
+//Função pra conseguir a direção mais frequente do vento do mês
+Future<int> getDirecaoVentoFrequenteMes(List<DataLine> listaObj) {
+  Map<int,int> listaDeGraus = {};
 
-  //Conta quantas vezes cada direção de vento aparece
-  for (var dado in listaDeObjetos) {
-    double direcao = dado.direcaoVento;
-
-    if (contagemDirecoes.containsKey(direcao)) {
-      contagemDirecoes[direcao] = contagemDirecoes[direcao]! + 1;
-    } else {
-      contagemDirecoes[direcao] = 1;
-    }
+  for ( var grau in listaObj) {
+    listaDeGraus[grau.direcaoVento] = (listaDeGraus[grau] ?? 0) + 1;
   }
 
-  //Encontra a direção com maior frequência
-  double direcaoMaisFrequente = contagemDirecoes.keys.first;
-  int maiorContagem = contagemDirecoes[direcaoMaisFrequente]!;
-
-  for (var entrada in contagemDirecoes.entries) {
-    if (entrada.value > maiorContagem) {
-      direcaoMaisFrequente = entrada.key;
-      maiorContagem = entrada.value;
-    }
-  }
-
-  return direcaoMaisFrequente;
+  int grauMaisFrequente = listaDeGraus.entries.reduce((a, b) => a.value > b.value ? a : b).key;
+  return Future.value(grauMaisFrequente);
 }
+
 
 Future<double> getUmidadeMinEstadoAno(List<List<DataLine>> listaMeses) async {
   double min = await getUmidadeMaxEstadoAno(await listaMeses);
@@ -293,10 +277,7 @@ Future<double> getTempMedEstadoMes(List<DataLine> listaDeObj) async {
 }
 
 Future<List<DataLine>> gerarListaObj(String userPath, String mes) async {
-  List<String> lista = await lerArquivoCSV(
-    userPath,
-    mes,
-  ); //TODO: Atualizar parâmetro
+  List<String> lista = await lerArquivoCSV(userPath, mes,);
   List<DataLine> listaObjetos = [];
   for (int i = 1; i < lista.length; i++) {
     //Index começa em 1, pra pular o header da tabela de dados
@@ -339,7 +320,7 @@ Future<DataLine> gerarObj(String userPath, int index) async {
   d.umidade = double.parse(linha[4]);
   d.densidadeAr = double.parse(linha[5]);
   d.velocidadeVento = double.parse(linha[6]);
-  d.direcaoVento = double.parse(linha[7]);
+  d.direcaoVento = int.parse(linha[7]);
 
   return d;
 }
@@ -353,7 +334,7 @@ abstract class dadosOrganizados {
   late double umidade;
   late double densidadeAr;
   late double velocidadeVento;
-  late double direcaoVento;
+  late int direcaoVento;
 }
 
 class DataLine extends dadosOrganizados {}
