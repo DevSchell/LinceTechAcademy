@@ -6,6 +6,15 @@
       <excludeFolder url="file://$MODULE_DIR$/formacao_dart/atividade_final_dart/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/formacao_dart/atividade_final_dart/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/formacao_dart/atividade_final_dart/build" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap1/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap1/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap1/build" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap2/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap2/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap3/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap3/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf1_funcoes/ap3/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
