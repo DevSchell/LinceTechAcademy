@@ -1,0 +1,214 @@
+POST https://cruiserdev.lince.com.br/sala
+Content-Type: application/json
+Authorization: cc84767f-1475-453b-b190-312e09b43908
+Content-Length: 95
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "codigo": "1acc0bb8-056b-4caf-94de-c4cb12578b82",
+  "nome": "Exemplo - ALT",
+  "vagas": 4
+}
+
+<> 2025-05-10T115103.401.txt
+
+###
+
+POST https://cruiserdev.lince.com.br/sala
+Content-Type: application/json
+Authorization: 864b9197-28dd-4afb-b751-ab9e3c00a4b6
+Content-Length: 38
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nome": "Exemplo",
+  "vagas": 10
+}
+
+<> 2025-05-10T112112.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/sala
+Content-Type: application/json
+Authorization: 864b9197-28dd-4afb-b751-ab9e3c00a4b6
+Content-Length: 38
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nome": "Exemplo",
+  "vagas": 10
+}
+
+<> 2025-05-10T112035.200.json
+
+###
+
+GET https://cruiserdev.lince.com.br/salas
+Authorization: 864b9197-28dd-4afb-b751-ab9e3c00a4b6
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-05-10T110025.200.json
+
+###
+
+GET https://cruiserdev.lince.com.br/salas
+Authorization: 864b9197-28dd-4afb-b751-ab9e3c00a4b6
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-05-10T105835.200.json
+
+###
+
+GET https://cruiserdev.lince.com.br/salas
+Authorization: 864b9197-28dd-4afb-b751-ab9e3c00a4b6
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-05-10T105819.200.json
+
+###
+
+GET https://cruiserdev.lince.com.br/salas
+Authorization: 864b9197-28dd-4afb-b751-ab9e3c00a4b6
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-05-10T105623.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/login
+Content-Type: application/json
+Content-Length: 45
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "login": "alexandre",
+  "senha": "alXe"
+}
+
+<> 2025-05-10T104702.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/login
+Content-Type: application/json
+Content-Length: 45
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "login": "alexandre",
+  "senha": "alXe"
+}
+
+<> 2025-05-10T104538.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/login
+Content-Type: application/json
+Content-Length: 45
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "login": "alexandre",
+  "senha": "alXe"
+}
+
+<> 2025-05-10T095922.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/login
+Content-Type: application/json
+Content-Length: 45
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "login": "alexandre",
+  "senha": "alXe"
+}
+
+<> 2025-05-10T095618.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/login
+Content-Type: application/json
+Content-Length: 45
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "login": "alexandre",
+  "senha": "alXe"
+}
+
+<> 2025-05-10T095247.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/login
+Content-Type: application/json
+Content-Length: 45
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "login": "alexandre",
+  "senha": "alXe"
+}
+
+<> 2025-05-10T094845.200.json
+
+###
+
+GET https://cruiserdev.lince.com.br/salas
+Authorization: 864b9197-28dd-4afb-b751-ab9e3c00a4b6
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2025-05-10T094823.200.json
+
+###
+
+POST https://cruiserdev.lince.com.br/login
+Content-Type: application/json
+Content-Length: 45
+User-Agent: IntelliJ HTTP Client/Android Studio Meerkat | 2024.3.1 Patch 1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "login": "alexandre",
+  "senha": "alXe"
+}
+
+<> 2025-05-10T094804.200.json
+
+###
+

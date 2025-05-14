@@ -1,0 +1,106 @@
+[
+  {
+    "codigo": "60a26082-c1ff-4523-859e-d8ab7d2fb64a",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Alexandre",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "bb6a98fd-8cfe-4539-96c1-b6b8eb0cfae9",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Alexandre",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "f38e24f8-6055-4357-a382-79c4c97a4f96",
+    "nome": "Sala Testes Rafael",
+    "vagas": 4,
+    "administrador": "Alexandre",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "a0c28f16-56b5-4a74-8314-154e1863f2cb",
+    "nome": "Sala Testes Rafael",
+    "vagas": 4,
+    "administrador": "Alexandre",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "86a2dceb-ca5a-4b09-8ace-e47aa85fdd95",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Kaua",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "7275695f-1124-47a4-a1e1-98de0da79dfb",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Kaua",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "c49a2bdf-1009-4913-9810-51c99bb68f96",
+    "nome": "Welcome",
+    "vagas": 10,
+    "administrador": "Joao",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "bfe74214-0190-4c11-983f-1c11c1c99279",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Kaua",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "3255da4e-0ecc-41d8-9e3d-d5d72de0d21d",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Kaua",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "50c68371-631f-427a-8e8a-ceaeb6401a64",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Kaua",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "65e8c3a6-7c8a-4fe9-933b-7480c312167c",
+    "nome": "oi",
+    "vagas": 15,
+    "administrador": "Alexandre",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "47cef16a-e9da-4a22-99f9-4b31c9c07897",
+    "nome": "Exemplo",
+    "vagas": 10,
+    "administrador": "Kaua",
+    "participantes": [],
+    "mensagens": []
+  },
+  {
+    "codigo": "e7f60087-6303-436f-99ce-ca9f7926082e",
+    "nome": "oi",
+    "vagas": 10,
+    "administrador": "Gustavo",
+    "participantes": [],
+    "mensagens": []
+  }
+]
