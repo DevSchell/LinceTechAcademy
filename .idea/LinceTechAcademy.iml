@@ -39,6 +39,9 @@
       <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf4_funcoes/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf4_funcoes/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/formacao_flutter/flutter_atividades/apf4_funcoes/build" />
+      <excludeFolder url="file://$MODULE_DIR$/encontros_presenciais/ferramentas/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/encontros_presenciais/ferramentas/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/encontros_presenciais/ferramentas/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
