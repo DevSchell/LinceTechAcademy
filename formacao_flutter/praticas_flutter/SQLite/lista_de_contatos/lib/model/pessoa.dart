@@ -1,9 +1,9 @@
 class Pessoa {
-  String? id;
+  int? id;
   String nome;
 
   Pessoa({
-    this.id,
+    required this.id,
     required this.nome,
 });
 }

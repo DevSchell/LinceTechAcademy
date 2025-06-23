@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lista_de_contatos/provider/pessoaState.dart';
 import 'package:lista_de_contatos/view/home.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(create: (_) => PessoaState(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
